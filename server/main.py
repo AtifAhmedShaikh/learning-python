@@ -7,7 +7,7 @@ app = FastAPI()
 #mongodb+srv://atifahmed19:myJsCode19@cluster0.ytfhno1.mongodb.net/snapNewsData?retryWrites=true&w=majority 
 
 # MongoDB Connection String
-databaseConnectionURL = "mongodb+srv://atifahmed19:myJsCode19@cluster0.ytfhno1.mongodb.net/snapNewsData?retryWrites=true&w=majority "
+databaseConnectionURL = "mongodb+srv://atifahmed19:my-pass@cluster0.ytfhno1.mongodb.net/my-database?retryWrites=true&w=majority "
 
 # # Connect to MongoDB
 # client = MongoClient(databaseConnectionURL)
