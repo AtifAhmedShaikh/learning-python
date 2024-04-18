@@ -72,10 +72,12 @@ def create_todo(todo: Todo):
 def update_todo(todo_id: str, todo: Todo):
     todo_dict = todo.dict()
     updated_todo = todos_collection.update_one({"_id": todo_id}, {"$set": todo_dict})
+    print(updated_todo.acknowledged)
     return {"message": "TODO updated"}
 
 @app.delete("/todos/{todo_id}")
 def delete_todo(todo_id: str):
     deleted_todo = todos_collection.delete_one({"_id": todo_id})
+    print(deleted_todo.deleted_count)
     return {"message": "TODO deleted"}
 
