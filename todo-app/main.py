@@ -67,3 +67,19 @@ def create_todo(todo: Todo):
     print(f"Created Todo Documnet ID: {documentId}")
 
     return {"message":"Todo Created successfully"}
+
+@app.put("/todos/{todo_id}")
+def update_todo(todo_id: str, todo: Todo):
+    todo_dict = todo.dict()
+    updated_todo = todos_collection.update_one({"_id": todo_id}, {"$set": todo_dict})
+    if updated_todo.modified_count == 0:
+        # raise HTTPException(status_code=404, detail="TODO not found")
+        return {"message": "TODO updated"}
+
+@app.delete("/todos/{todo_id}")
+def delete_todo(todo_id: str):
+    deleted_todo = todos_collection.delete_one({"_id": todo_id})
+    if deleted_todo.deleted_count == 0:
+        # raise HTTPException(status_code=404, detail="TODO not found")
+       return {"message": "TODO deleted"}
+
