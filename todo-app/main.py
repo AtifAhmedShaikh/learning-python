@@ -3,7 +3,11 @@ print("Welcome Todo App..")
 from pymongo import MongoClient
 from fastapi import FastAPI
 from pydantic import BaseModel
+# from bson import ObjectId
+from bson.objectid import ObjectId
 
+import sys
+print(sys.path)
 
 app = FastAPI()
 try:
@@ -71,13 +75,13 @@ def create_todo(todo: Todo):
 @app.put("/todos/{todo_id}")
 def update_todo(todo_id: str, todo: Todo):
     todo_dict = todo.dict()
-    updated_todo = todos_collection.update_one({"_id": todo_id}, {"$set": todo_dict})
+    updated_todo = todos_collection.update_one({"_id": ObjectId(todo_id)}, {"$set": todo_dict})
     print(updated_todo.acknowledged)
     return {"message": "TODO updated"}
 
 @app.delete("/todos/{todo_id}")
 def delete_todo(todo_id: str):
-    deleted_todo = todos_collection.delete_one({"_id": todo_id})
+    deleted_todo = todos_collection.delete_one({"_id": ObjectId(todo_id)})
     print(deleted_todo.deleted_count)
     return {"message": "TODO deleted"}
 
