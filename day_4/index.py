@@ -34,8 +34,24 @@ for c in user_name:
 
 # string slice
 
-name_3 = "hey22 bro how are you"
+name_3 = "hey22 how bro how are you!"
 name_3[0:3]  # return first index to third -> hey2
 name_3.capitalize()  # capitalize first letter
 len(name_3)  # length of string
 print(name_3[0:4])
+print(name_3.upper())
+print(name_3.lower())
+print(name_3.count("how"))  # count how word from string
+print(name_3.rstrip("!"))  # remove -> ! from last
+print(name_3.replace("how", "what"))  # replace how into what from ALL
+print(name_3.startswith("how"))  # return boolean is string start with how
+print(name_3.endswith("how"))  # return boolean is string end with how
+# return index of first letter of given argumet like ->h output -> 6 if not found then return -1
+print(name_3.find("are"))
+
+
+# return index of first letter of given arg like find butr if not found the throw Error
+print(name_3.index("how"))
+
+
+# string is umutble in python
