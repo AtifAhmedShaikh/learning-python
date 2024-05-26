@@ -18,4 +18,15 @@ print("Hi \n \n Bro i am from new line")  # Escape sequences
 print('My Name is "Atif" ')
 
 
-print("Hey", "Hello", "Hi", sep="-", end="-")  # ouput Hey-Hello-Hi-
+print("Hey", "Hello", "Hi", sep="-\n", end="-")  # ouput Hey-Hello-Hi-
+
+
+# vairable is like a container that holds data. very similar to how our containers in kitchen holds sugar salt etc...
+# creating a variable is like  creating a placholer in memory and assigning it some  value.
+# in python  its as  easy  as writing
+
+
+value_1 = 5
+value_2 = 10
+
+print(value_1 + value_2)
