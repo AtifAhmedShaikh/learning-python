@@ -50,7 +50,7 @@ print(name_3.endswith("how"))  # return boolean is string end with how
 print(name_3.find("are"))
 
 
-# return index of first letter of given arg like find butr if not found the throw Error
+# return index of first letter of given arg like find but if not found the throw Error
 print(name_3.index("how"))
 
 
