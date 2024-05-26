@@ -6,3 +6,9 @@ Create virtual enviroment
 Activate It
 
 `bash .\venv\Scripts\activate `
+
+Generate requirements.txt
+` pip freeze > requirements.txt`
+
+Install Package
+` pip install <package-name>`
